@@ -1,4 +1,4 @@
-  require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol",
+   require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol",
   "esri/symbols/SimpleLineSymbol", "esri/renderers/SimpleRenderer", "esri/graphic",
   "esri/Color", "esri/lang", "esri/geometry/webMercatorUtils", "esri/tasks/query",
   "esri/tasks/QueryTask", "esri/dijit/HomeButton", "esri/dijit/Scalebar", "esri/InfoTemplate",
@@ -13,7 +13,7 @@
       map = new Map("map",{
           basemap: "streets",
           center: [-92, 31],
-          zoom: 7
+          zoom: 8
       });
 
       var district = new FeatureLayer ("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/11",{
@@ -182,18 +182,30 @@
               label: "11x17 Landscape",
               format: "PDF",
               layout: "A3 Landscape",
+              layoutOptions:{
+                  titleText: "Roadshow Map"
+              }
           }, {
               label: "11x17 Portrait",
               format: "PDF",
-              layout: "A3 Portrait"
+              layout: "A3 Portrait",
+              layoutOptions:{
+                  titleText: "Roadshow Map"
+              }
           }, {
-              label: "8.5x11 Landscape",
+              label: "8x11 Landscape",
               format: "PDF",
-              layout: "A4 Landscape"
+              layout: "A4 Landscape",
+              layoutOptions:{
+                  titleText: "Roadshow Map"
+              }
           }, {
-              label: "8.5x11 Portrait",
+              label: "8x11 Portrait",
               format: "PDF",
-              layout: "A4 Portrait"
+              layout: "A4 Portrait",
+              layoutOptions:{
+                  titleText: "Roadshow Map"
+              }
           }]
       }, dom.byId("printButton"));
       printer.startup();
@@ -203,11 +215,6 @@
           map: map,
       }, "legendDiv");
       legend.startup();
-
-      //Create a legend for the printing of the maps
-      var legendLayer = new LegendLayer();
-      legendLayer.layerId = parishOutlines.id;
-      legendLayer.subLayerIds = [0];
 
       map.addLayer(stateOutline);
 
@@ -413,6 +420,14 @@
           map.removeLayer(districtOutline);
           map.removeLayer(senateDistrictOutline);
           map.removeLayer(selectedSenate);
+          map.removeLayer(roadshowLinear1116);
+          map.removeLayer(roadshowLinear1617);
+          map.removeLayer(roadshowLinear1718);
+          map.removeLayer(roadshowLinearOther);
+          map.removeLayer(roadshowPoint1116);
+          map.removeLayer(roadshowPoint1617);
+          map.removeLayer(roadshowPoint1718);
+          map.removeLayer(roadshowPointOther);
           map.addLayer(houseDistrictOutline);
           document.getElementById("Filter").style.display = "none";
           document.getElementById("parishFilter").style.display = "none";
@@ -476,6 +491,14 @@
 
           document.getElementById("resetHouseFilter").onclick = function resetHouseFilter(){
               map.removeLayer(selectedHouse);
+              map.removeLayer(roadshowLinear1116);
+              map.removeLayer(roadshowLinear1617);
+              map.removeLayer(roadshowLinear1718);
+              map.removeLayer(roadshowLinearOther);
+              map.removeLayer(roadshowPoint1116);
+              map.removeLayer(roadshowPoint1617);
+              map.removeLayer(roadshowPoint1718);
+              map.removeLayer(roadshowPointOther);
           }
       }
 
@@ -491,6 +514,14 @@
           map.removeLayer(districtOutline);
           map.removeLayer(houseDistrictOutline);
           map.removeLayer(selectedHouse);
+          map.removeLayer(roadshowLinear1116);
+          map.removeLayer(roadshowLinear1617);
+          map.removeLayer(roadshowLinear1718);
+          map.removeLayer(roadshowLinearOther);
+          map.removeLayer(roadshowPoint1116);
+          map.removeLayer(roadshowPoint1617);
+          map.removeLayer(roadshowPoint1718);
+          map.removeLayer(roadshowPointOther);
           map.addLayer(senateDistrictOutline);
           document.getElementById("Filter").style.display = "none";
           document.getElementById("parishFilter").style.display = "none";
@@ -518,10 +549,50 @@
               senateDistrictOutline.queryFeatures(query, function(result){
                   map.setExtent(result.features[0].geometry.getExtent(), true);
               });
+
+              //Add the roadshow features to the map starting with 2011-2016
+              roadshowLinear1116.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowLinear1116);
+
+              //Letting dates of 2016-2017
+              roadshowLinear1617.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowLinear1617);
+
+              //Letting dates of FY17-18
+              roadshowLinear1718.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowLinear1718);
+              
+              //Letting date of other
+              roadshowLinearOther.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowLinearOther);
+
+              //Roadshow points 2011-2016
+              roadshowPoint1116.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowPoint1116);
+
+              //Roadshow points 2016-17
+              roadshowPoint1617.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowPoint1617);
+
+              //Roadshow points FY17-18
+              roadshowPoint1718.setDefinitionExpression("Senate_District = '" + senateType + "'");
+              map.addLayer(roadshowPoint1718);
+
+              //Roadshow points other
+              roadshowPointOther.setDefinitionExpression("Senate_District = '" + houseType + "'");
+              map.addLayer(roadshowPointOther);
           }
 
           document.getElementById("resetSenateFilter").onclick = function resetSenateFilter(){
               map.removeLayer(selectedSenate);
+              map.removeLayer(roadshowLinear1116);
+              map.removeLayer(roadshowLinear1617);
+              map.removeLayer(roadshowLinear1718);
+              map.removeLayer(roadshowLinearOther);
+              map.removeLayer(roadshowPoint1116);
+              map.removeLayer(roadshowPoint1617);
+              map.removeLayer(roadshowPoint1718);
+              map.removeLayer(roadshowPointOther);
           }
       }
    })
