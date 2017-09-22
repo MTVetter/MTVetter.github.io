@@ -140,4 +140,7 @@ html, body{
     max-width: 450px;
     display: none;
 }
-
+mark{
+    background-color: darkslategray;
+    color: whitesmoke;
+}
