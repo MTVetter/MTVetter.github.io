@@ -1,22 +1,46 @@
-   require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol",
+  require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol",
   "esri/symbols/SimpleLineSymbol", "esri/renderers/SimpleRenderer", "esri/graphic",
   "esri/Color", "esri/lang", "esri/geometry/webMercatorUtils", "esri/tasks/query",
   "esri/tasks/QueryTask", "esri/dijit/HomeButton", "esri/dijit/Scalebar", "esri/InfoTemplate",
   "esri/config", "esri/dijit/Print", "esri/dijit/Legend", "esri/tasks/LegendLayer",
-  "dojo/number", "dijit/popup", "dijit/TooltipDialog", "dojo/_base/array", "dojo/on", "dojo/dom",
-  "dijit/layout/BorderContainer", "dijit/form/ComboBox", "dijit/form/Button",
-  "dojo/store/Memory", "dojo/promise/all", "dojo/dom-style", "dojo/domReady!"], 
+  "esri/dijit/FeatureTable", "esri/dijit/InfoWindow",
+  "dojo/number", "dijit/popup", "dijit/TooltipDialog", "dojo/_base/array", "dojo/on", "dojo/dom", "dijit/Dialog",
+  "dijit/layout/BorderContainer", "dijit/form/ComboBox", "dijit/form/Button", "dijit/layout/TabContainer", "dijit/layout/ContentPane",
+  "dojo/store/Memory", "dojo/promise/all", "dojo/dom-style", "dojo/domReady!", "dojo/dom-construct"], 
   function(Map, FeatureLayer, SimpleFillSymbol, SimpleLineSymbol, SimpleRenderer, Graphic,
   Color, esriLang, webMercatorUtils, Query, QueryTask, HomeButton, Scalebar, InfoTemplate, esriConfig, Print, Legend,
-   LegendLayer, number, dijitPopup, TooltipDialog, arrayUtils, on, dom, Memory, all, domStyle){
+   LegendLayer, FeatureTable, InfoWindow, number, dijitPopup, TooltipDialog, arrayUtils, on, dom, Dialog, Memory, all, domStyle, domConstruct){
+
 
       map = new Map("map",{
-          basemap: "streets",
+          basemap: "gray-vector",
           center: [-92, 31],
-          zoom: 8
+          zoom: 7,
       });
 
-      var district = new FeatureLayer ("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/11",{
+      var template = new InfoTemplate();
+      template.setTitle("Project: ${PROJECT}");
+      template.setContent("<b>Project: </b>${PROJECT}<br/>" +
+                          "<b>Federal Number: </b>${FEDERAL_NUM}<br/>" +
+                          "<b>Legacy Project: </b>${LEGACY_PROJECT}<br/>" +
+                          "<b>Route: </b>${ROUTE}<br/><br/>" +
+                          "<mark><b>PROJECT LOCATION:</b></mark><br/>" +
+                          "<b>DOTD District: </b>${DISTRICT}<br/>" +
+                          "<b>Parish: </b>${PARISH_NAME}<br/>" +
+                          "<b>Urbanized Area: </b>${URBANIZED AREA}<br/>" +
+                          "<b>House District: </b>${House_District}<br/>" +
+                          "<b>Senate District: </b>${Senate_District}<br/><br/>" +
+                          "<mark><b>PROJECT CONTACT:</b></mark><br/>" +
+                          "<b>Manager: </b>${MANAGER}<br/><br/>" +
+                          "<mark><b>PROJECT DATES:</b></mark><br/>" +
+                          "<b>Delivery Date: </b>${DELIVERY DATE:DateFormat(datePattern:'MMMM d, yyyy')}<br/>" +
+                          "<b>Letting Date: </b>${LETTING_DATE:DateFormat(datePattern:'MMMM d, yyyy')}<br/><br/>" +
+                          "<mark><b>PROJECT COSTS:</b></mark><br/>" +
+                          "<b>Fund: </b>${FUND}<br/>" +
+                          "<b>Estimated Cost: </b><br/>" +
+                          "<b>Letting Cost: </b>${LETTING_COST}<br/><br/>");
+
+      var district = new FeatureLayer ("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/FeatureServer/11",{
           mode: FeatureLayer.MODE_SNAPSHOT,
           outFields: ["District_Name", "Sq_Miles"]
       });
@@ -68,42 +92,49 @@
 
       var roadshowLinear1116 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/4",{
           mode: FeatureLayer.MODE_SNAPSHOT,
-          infoTemplate: roadshowTemplate,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowLinear1617 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/5",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowLinear1718 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/6",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowLinearOther = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/7",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowPoint1116 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/0",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowPoint1617 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/1",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowPoint1718 = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/2",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
       var roadshowPointOther = new FeatureLayer("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/MapServer/3",{
           mode: FeatureLayer.MODE_SNAPSHOT,
+          infoTemplate: template,
           outFields: ["*"]
       });
 
@@ -150,11 +181,6 @@
       parishOutlines.setRenderer(new SimpleRenderer(parishSymbol));
       stateOutline.setRenderer(new SimpleRenderer(stateSymbol));
       //unselectedParishOutlines.setRenderer(new SimpleRenderer(unselectedSymbol));
-
-      //Create a infoTemplate to provide user information when layer is clicked
-      var roadshowTemplate = new InfoTemplate();
-      roadshowTemplate.setTitle("Project Number: ${PROJECT}");
-      roadshowTemplate.setContent("<b>Project Name: </b>${PROJECT_NAME}<br>");
 
       dialog = new TooltipDialog({
           id: "tooltipDialog",
@@ -216,6 +242,7 @@
       }, "legendDiv");
       legend.startup();
 
+
       map.addLayer(stateOutline);
 
       //Add onClick function for parishes
@@ -268,6 +295,7 @@
                   map.setExtent(result.features[0].geometry.getExtent(), true);
               });
 
+
               //Add the roadshow features to the map starting with 2011-2016
               roadshowLinear1116.setDefinitionExpression("PARISH_NAME LIKE '%" + parishType + "%'");
               map.addLayer(roadshowLinear1116);
@@ -299,6 +327,7 @@
               //Roadshow points other
               roadshowPointOther.setDefinitionExpression("PARISH_NAME LIKE '%" + parishType + "%'");
               map.addLayer(roadshowPointOther);
+
           }
 
           document.getElementById("resetFilter").onclick = function resetParishFilter(){
@@ -311,6 +340,7 @@
               map.removeLayer(roadshowPoint1617);
               map.removeLayer(roadshowPoint1718);
               map.removeLayer(roadshowPointOther);
+              //attributeTable.refresh();
           }
       }
 
