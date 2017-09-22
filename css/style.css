@@ -141,6 +141,6 @@ html, body{
     display: none;
 }
 mark{
-    background-color: darkslategray;
-    color: whitesmoke;
+    background-color: darkgray;
+    color: white;
 }
