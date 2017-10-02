@@ -11,9 +11,23 @@
     <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://js.arcgis.com/3.21/"></script>
-    <script src="js/version2.js"></script>
+    <script src="js/DynamicMapService.js"></script>
 </head>
 <body class="claro">
+<div id="wait" class="esriSimpleSlider">
+    <img src="img/largeColorDOTD.png">
+    <h1>Welcome to DOTD's Highway Priority Program</h1>
+    <span><br>This application is used with the permission of DOTD</br></span>
+    <button data-dojo-type="diji/form/Button" id="click">Close</button>
+</div>
+<button data-dojo-type="dijit/form/Button" id="helpClick">Help</button>
+<div id="pdf" class="esriSimpleSlider">
+    <object data="img/Help.pdf" type="application/pdf" width="600" height="400">
+        alt: <a href="img/Help.pdf">Help</a>
+    </object>
+    <button data-dojo-type="dijit/form/Button" id="helpClickClose">Close</button>
+</div>
+<!--<div id="help"><button data-dojo-type="dijit/form/Button" id="helpClick">Help</button></div>-->
 <div id="mainWindow" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline'">
     <div id="info"><div id="legendDiv"></div></div>
     <div id="choices" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">
@@ -202,7 +216,7 @@
     </div>
     <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
         <div id="HomeButton"></div>
-        <div id="printButton"></div>
+        <!--<div id="printButton"></div>-->
         <span id="Filter" style="position:fixed; left:20px; z-index:1; height:115px; bottom:50px; background-color:#FFFFFF; border:2px solid #666666; border-radius:6px; font-size:18px; padding:5px; display: none">
 	        <p style="margin-top:2px">Choose a parish:</p><br>
 		    <p style="margin-top:-25px; text-indent:10px; font-size:12px">Parish: <select id='parishFilter'><option value=''''>Select a Parish</option>
