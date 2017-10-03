@@ -31,18 +31,6 @@ require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol"
           dom.byId("wait").style.display = "none";
       };
 
-      on(dom.byId("helpClick"), "click", helpOpen);
-
-      function helpOpen(event){
-          dom.byId("pdf").style.display = "block";
-      };
-
-      on(dom.byId("helpClickClose"), "click", helpClose);
-
-      function helpClose(event){
-          dom.byId("pdf").style.display = "none";
-      };
-
       var template = new InfoTemplate();
       template.setTitle("Project: ${PROJECT}");
       template.setContent("<b>Project: </b>${PROJECT}<br/>" +
