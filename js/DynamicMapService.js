@@ -32,11 +32,7 @@ require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol"
                           "<b>House District: </b>${House_District}<br/>" +
                           "<b>Senate District: </b>${Senate_District}<br/><br/>" +
                           "<mark><b>PROJECT CONTACT:</b></mark><br/>" +
-                          "<b>Manager: </b>${MANAGER}<br/><br/>" +
-                          "<mark><b>PROJECT COSTS:</b></mark><br/>" +
-                          "<b>Fund: </b>${FUND}<br/>" +
-                          "<b>Estimated Cost: </b><br/>" +
-                          "<b>Letting Cost: </b>${LETTING_COST}<br/><br/>");
+                          "<b>Manager: </b>${MANAGER}<br/><br/>"
 
       var district = new FeatureLayer ("https://giswebnew.dotd.la.gov/arcgis/rest/services/Static_Data/2018_Roadshow/FeatureServer/11",{
           mode: FeatureLayer.MODE_SNAPSHOT,
