@@ -19,18 +19,6 @@ require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol"
           zoom: 7,
       });
 
-      loading = dom.byId("wait");
-      map.on("load", Popup);
-      function Popup(event){
-        dom.byId("wait").style.display = "block";
-      };
-
-      on(dom.byId("click"), "click", closeIt);
-
-      function closeIt(event){
-          dom.byId("wait").style.display = "none";
-      };
-
       var template = new InfoTemplate();
       template.setTitle("Project: ${PROJECT}");
       template.setContent("<b>Project: </b>${PROJECT}<br/>" +
