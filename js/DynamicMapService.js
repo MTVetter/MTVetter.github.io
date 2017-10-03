@@ -20,9 +20,10 @@ require(["esri/map", "esri/layers/FeatureLayer", "esri/symbols/SimpleFillSymbol"
       });
 
       loading = dom.byId("wait");
-      ready(function (){
-          loading.show()
-      });
+      map.on("load", Popup);
+      function Popup(event){
+        dom.byId("wait").style.display = "block";
+      };
 
       on(dom.byId("click"), "click", closeIt);
 
