@@ -1,0 +1,123 @@
+/***Navbar***/
+.navbar-default{
+    background-color: #778899;
+    border-radius: 0;
+    background-image: none;
+}
+
+/**Navbar Title**/
+.navbar-default .navbar-brand{
+    color: #F5F5F5;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navbar hover effects */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #F0E68C;
+}
+
+/*Navbar Menu*/
+.navbar-menu-button{
+    background-color: white;
+    font-weight: bold;
+    font-family: "Anonymous Pro";
+}
+
+/*Navbar Links*/
+.navbar-default .navbar-nav > li > a{
+    color: #F5F5F5;
+    font-size: 16px;
+}
+
+.jumbotron{
+    font-size: 12px;
+}
+
+.page-content h3{
+    font-family: "Anonymous Pro";
+    font-size: 22px;
+}
+
+.page-content p{
+    font-family: "Anonymous Pro";
+    font-size: 18px;
+}
+.page-content h1{
+    font-family: "Anonymous Pro";
+    font-size: 42px;
+}
+
+.page-content .job-description{
+    font-size: 16px;
+}
+
+.job-logo{
+    max-width: 200px;
+}
+
+.job-logo-container{
+    padding-left: 0;
+    padding-top: 20px;
+}
+
+.page-content .job-header{
+    font-family: "Permanent Marker";
+}
+
+.resume-hr{
+    border: 1px solid #000000;
+}
+
+.resume-skills-section h3{
+    font-family: "Permanent Marker";
+}
+
+.education-description-container .education-header{
+    font-family: "Permanent Marker";
+}
+
+.contact{
+    font-family: "Anonymous Pro";
+}
+
+.contact a{
+    color: #778899;
+}
+
+.jumbotron-paragraph a{
+    color: #778899;
+}
+
+.portfolio-link{
+    margin-top: 0;
+    text-align: center;
+}
+
+.portfolio-thumbnail:hover{
+    border-color: #F0E68C;
+    border-width: 3px;
+    cursor: pointer;
+}
+
+.portfolio-thumbnail{
+    margin-top: 10px;
+}
+
+.portfolio-link{
+    font-family: "Permanent Marker";
+    color: #778899;
+}
+
+.post-content{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+body{
+    font-family: "Anonymous Pro";
+    padding-top: 50px;
+}
