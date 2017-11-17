@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="#">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Hurricane Preparedness
+                            </h1>
+                        </header>
+                        <div class="post-content">
+                            <a href="../assets/MVetter_LongformInfographic.png">
+                                <img src="../assets/MVetter_LongformInfographic.png" alt="Hurricane Preparedness">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> Living in Louisiana, there is always a chance a hurricane might hit. I thought it would be to look at the history of
+                            hurricane landfall. Along with the statistics of hurricane landfalls, I decided to include a little history about NOAA and some key things to
+                            remember before, during, and after a hurricane has made landfall.</p>
+                            <p><strong>Process:</strong> I was able to get a spreadsheet from NOAA that had hurricane landfall since the 1890s. I brought this spreadsheet into
+                            ArcMap to join to a shapefile of the United States. I classified the hurricanes based on the Saffir-Simpson Hurricane Wind Scale and the wind speed
+                            when they made landfall. I further classified the hurricanes based on major (> Category 3) or minor (Category 1 or 2). I used these categories to
+                            create a bivariate map of major and minor hurricane landfalls.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-1.11.3.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
