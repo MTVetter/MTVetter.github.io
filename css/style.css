@@ -65,7 +65,7 @@
 }
 
 .page-content .job-header{
-    font-family: "Permanent Marker";
+    font-family: "Anonymous Pro";
 }
 
 .resume-hr{
@@ -73,11 +73,11 @@
 }
 
 .resume-skills-section h3{
-    font-family: "Permanent Marker";
+    font-family: "Anonymous Pro";
 }
 
 .education-description-container .education-header{
-    font-family: "Permanent Marker";
+    font-family: "Anonymous Pro";
 }
 
 .contact{
@@ -108,13 +108,29 @@
 }
 
 .portfolio-link{
-    font-family: "Permanent Marker";
+    font-family: "Anonymous Pro";
     color: #778899;
 }
 
 .post-content{
     text-align: center;
     margin-bottom: 0;
+}
+
+.page-content .about-title h1{
+    font-family: "Permanent Marker";
+}
+
+.resume-section h2{
+    font-family: "Permanent Marker";
+}
+
+.contact h2{
+    font-family: "Permanent Marker";
+}
+
+.home h1{
+    font-family: "Permanent Marker";
 }
 
 body{
