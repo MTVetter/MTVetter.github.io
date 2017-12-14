@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Space Jam Vector Tileset
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <iframe width="100%" height="500px" frameborder="0" src="https://api.mapbox.com/styles/v1/brbadger/cjasc8vs9j3v62rn05lawl6nj.html?fresh=true&title=true&access_token=pk.eyJ1IjoiYnJiYWRnZXIiLCJhIjoiY2lzbmZpN2lqMDR6dTJzcGIwaXlpczNnOSJ9.wuTp2sJtLSbxjyQAV1t_nQ#3.64/36.83/-95.47"></iframe>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> This interactive map was part of a school assignment. The assignment was to style an interactive web map based on
+                            a couple of different options. I decided to base my map on an animated film. My map was based on the 1996 legendary film Space Jam. All the
+                            inspiration came directly from the film. All the main colors came from the aliens while the symbols were a mixture of aliens and Looney Tune
+                            characters.</p>
+                            <p><strong>Process:</strong> The first thing that I did was to create an inspiration board to help me decide the different colors of the countries, roads,
+                            urban areas, water, and landuse. Once I selected my colors, I created texture files in Illustrator. These texture files were then exported as svg files and
+                            brought into Mapbox to add depth to the map. I also created the symbols in Illustrator. I found a text font that reminded me of the text that was used in
+                            Space Jam. I used Mapbox to create the interactive web map. Mapbox allowed me to determine the different scales of things like roads, city labels, waterbodies, 
+                            and states.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
