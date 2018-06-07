@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Chase Deposits
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://mtvetter.github.io/ChaseDeposits/">
+                                <img src="../assets/chaseDeposits.PNG" alt="chase deposits">"
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> This application was part of a school assignment. The assignment was to create a spatiotemporal visualization web map that had at least 15 point locations, 
+                            across at least 7 timestamps, and at least 5 different interactions. The web map needed to use jQuery and Leaflet.</p>
+                            <p><strong>Process:</strong> This was my introduction to both Leaflet and jQuery. I located the data from Kaggle and narrowed down the list of cities to the top 30 most populated U.S.
+                            cities. After getting the data into a usable format, I converted the Excel sheet into a geoJSON file. Through Leaflet, I used the AJAX function to load the geoJSON. I created a function that
+                            looped through the data based on years. By looping through the years, the points would either grow or shrink based on the number of deposits for the city.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
