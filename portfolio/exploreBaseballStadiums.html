@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Explore MLB Stadiums
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://mtvetter.github.io/ExploreBaseballStadiums/">
+                                <img src="../assets/exploreBaseballStadiums.PNG" alt="explore baseball stadiums">"
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> This application was part of a school assignment. The assignment was to create an application from ground up.
+                            I had to create a persona that would be the typical user of the application. I also had to create a scenario representing the typical experience a user
+                            would have if they used the application. Then I created a lo-fi wireframe of the application.</p>
+                            <p><strong>Process:</strong> The first thing that I did was to think of a topic that I wanted to create an application for. I decided to explore the history
+                            and facts about MLB stadiums. Secondly, I needed to decide what features the application would have. I decided that the application would have a search bar
+                            to search based on team name, a home button in case the user wanted to go back to the inital extent of the application, and a popup side panel. The side panel has
+                            information about the stadium and a d3 graph that shows the every MLB team's winning percentage at the selected stadium. I used Leaflet as the basis for the application.
+                            Leaflet allowed me to display a geoJSON file of MLB points. I changed the points to display the logo of the teams. I was able to modify Leaflet's standard popup window
+                            to become a side panel that slides into view when a logo is clicked. In the side panel, I managed to develop a d3 graph showing the winning percentage of each team at the stadium.
+                            If you hover over a point in the graph, a popup window will display the team name and the winning percentage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
