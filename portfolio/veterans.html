@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="../css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
-        <link rel="icon" href="../assets/check.ico">
+	<link rel="icon" href="../assets/check.ico">
 	</head>
 
     <body>
@@ -44,20 +44,21 @@
                     <div class="col-md-12">
                         <header class="post-header portfolio-header">
                             <h1 class="post-title" itemprop="name headline">
-                                Chase Deposits
+                                Veterans Across America
                             </h1>
                         </header>
-                        <div class="post-content" itemprop="articleBody">
-                            <a href="https://mtvetter.github.io/ChaseDeposits/">
-                                <img src="../assets/chaseDeposits.PNG" alt="chase deposits">"
+                        <div class="post-content">
+                            <a href="https://mtvetter.github.io/VeteransAcrossAmerica/">
+                                <img src="../assets/veterans.png" alt="Veterans Across America">
                             </a>
                         </div>
                         <div class="portfolio-image">
-                            <p><br><strong>About:</strong> This web map was part of a school assignment. The assignment was to create a spatiotemporal visualization web map that had at least 15 point locations, 
-                            across at least 7 timestamps, and at least 5 different interactions. The web map needed to use jQuery and Leaflet.</p>
-                            <p><strong>Process:</strong> This was my introduction to both Leaflet and jQuery. I located the data from Kaggle and narrowed down the list of cities to the top 30 most populated U.S.
-                            cities. After getting the data into a usable format, I converted the Excel sheet into a geoJSON file. Through Leaflet, I used the AJAX function to load the geoJSON. I created a function that
-                            looped through the data based on years. By looping through the years, the points would either grow or shrink based on the number of deposits for the city.</p>
+                            <p><br><strong>About:</strong> This web map was part of a school assignment. The assignment was to create a coordinated visualization using D3. I had to
+                            create a map with at least 15 enumeration units and have at least 5 numerical variables for the enumeration units.</p>
+                            <p><strong>Process:</strong> This was my introduction to D3. I decided to use all 50 states as my enumeration units. I managed to find veteran data for
+                            each state. The majority of the stats are a percentage of the state's population. For instance, I found the percentage of a state's population that are
+                            veterans. There is a dropdown option for the user to easily change the attribute. When a user changes the attribute, the map will change colors and the
+                            bar graph below the map will realign so that the highest percentage states are on the left side of the graph.</p>
                         </div>
                     </div>
                 </div>
