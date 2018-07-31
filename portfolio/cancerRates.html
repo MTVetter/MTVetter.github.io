@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Cancer Rates in Wisconsin
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <video width="800" height="500" controls>
+                                <source src="../assets/cancerRates.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> This application was part of a school assignment for a Capstone course. The assignment was to create an application to find the relationship between nitrate levels and cancer rates.
+                            I had to allow a user to enter a value that would be used in the inverse weighting distance procedure. The application also had to allow the user to download any maps that were produced.
+                            This application drew from the knowledge I gained from my GIS and Spatial Analysis and Geocomputing courses.</p>
+                            <p><strong>Process:</strong> The first thing that I did was to think of how I wanted to complete the project. I decided to create a Python script that would run through
+                            the inverse weighting distance and linear regression procedures. Secondly, I needed a way to have a user interface for the application. I decided on TKinter as the user interface.
+                            TKinter is a Python package that is included when installing Esri's ArcMap. This was my first time working with TKinter, and I felt like I learned it pretty easily.
+                            I allowed the user to choose between two different spatial boundaries. The spatial boundaries I used were census tracts and Wisconsin counties.
+                            I greyed out the map and download buttons to ensure that the user would be the application first. After the user ran the application, they could download both maps by clicking the download button.
+                            When the user clicks the download button, they can navigate to the location where they want to save the maps.
+                            The maps are downloaded as PDFs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>

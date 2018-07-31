@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Great Smoky Mountains
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <video width="800" height="500" controls>
+                                <source src="../assets/GRSM.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>About:</strong> This application was part of a school assignment for a Capstone course. The assignment was to develop a mobile application that would
+                            improve vistor experience of the park. The application needed to be useful to visitors before they arrive and provide information
+                            while the visitors are inside the park. The application should allow the visitors the ability to add data to a database.</p>
+                            <p><strong>Process:</strong> The first thing that I did was to think of a park to use for the application. I decided to use Great Smoky Mountains
+                            since my family has visited the park a couple of times. Some of the layers that I included in the park include: trails, ranger stations
+                            , restroom locations, picnic areas, and a weather layer from the National Weather Service. The application has a side panel that allows the user
+                            to filter the layers based on the different counties that make up the park. Some of the features in the application include a show my location, search button,
+                            and an ability for the user to add problem locations. The show my location feature uses the device's GPS to show the user where they are within the park.
+                            The search button allows the user to search for different trails within the park. When the user adds a problem location, a dialog box appears where the user
+                            can enter the location and description of the problem along with the date. After the user clicks submit, the layer is updated to show the newly added feature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
