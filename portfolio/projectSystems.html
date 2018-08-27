@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                DOTD Project Systems
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://mtvetter.github.io/ProjectSystems/">
+                                <img src="../assets/projectSystems.PNG" alt="project systems">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ESRI ArcGIS for JavaScript API version 4.8, ESRI Linear Referencing API, ESRI REST API, jQuery, jQuery UI</p>
+                            <p><strong>About:</strong> This was the final project of my Master's program. The assignment was to find a real world problem and come up with a solution.
+                            The problem I decided to solve was the way employees at Louisiana Department of Transportation input proposed projects. Currently, employees enter all the
+                            information through tables and they never have to use a map to view the project. The employees can draw the proposed project onto the map and allow the system
+                            to enter all the information about the project for them. The employee could enter a limited amount of project information and have the system populate the rest
+                             of the values. If the employee can change any of the values that the system entered before clicking submit.</p>
+                            <p><strong>Process:</strong> I decided to use ESRI's ArcGIS for JavaScript API. I never used the ArcGIS for JavaScript API before so there was a slight learning
+                            curve. I used feature services that the department already has available for use. I also used jQuery for the side panel and jQuery UI for the help and info windows.
+                            I used the draw feature that comes standard with ArcGIS for JavaScript. When the user clicks the button to draw a project, the side panel displays. This side panel
+                            is where the user can enter in the project's information before drawing. After the user is done drawing the proposed project, I use ESRI's Linear Referencing API to
+                            get the route ID and measure of the roadway that the project will be on. I use ESRI's REST API to do a spatial query of other feature services to determine the values
+                            of fields like Functional System, Federal Aid, and Urbanized Area. The user can change any of these before clicking submit and these changed values will overwrite the
+                            system generated values in the final feature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
