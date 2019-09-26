@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Basin Highlight Report
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://datalab.h-gac.com/development/BHR_app">
+                                <img src="../assets/BHR.PNG" alt="basin highlight report">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ESRI ArcGIS for JavaScript API</p>
+                            <p><strong>About:</strong> This application is part of the yearly Basin Highlight Report (BHR). The BHR is usually formatted in an ESRI storymap.
+                            The storymap contains interactive maps to display the condition of the different waterways throughout the Houston area. This particular interactive
+                            map depicts the different watersheds, rivers, and lakes in the Houston area. The project manager wanted to filter the watersheds to display only the
+                            watershed that contains the river that was clicked. The project manager also wanted to have popup to display a description of the watershed, list
+                            the major tributaries, areas of concern, and any plans associated with the watershed.
+                            </p>
+                            <p><strong>Process:</strong>Since this was going to be part of the BHR and was going into a storymap, I tried to create what the project manager
+                            wanted within ArcGIS Online. However, ArcGIS Online doesn't allow users to reposition the popup window. This left ArcGIS for JavaScript as the only
+                            solution to give the project manager what she wanted. In order to filter the watersheds based on the user's click, I captured the latitude and
+                            longitude of the mouse click. Then I created a query using the mouse click as the feature to query against the watershed layer. Once the query
+                            produces a result, I create a definition expression on the watershed based on the name from the results. Creating the popup in the style that the
+                            project manager wanted was more time consuming and difficult. I used ESRI's Arcade language to set the popup for each watershed based on the
+                            watershed's ID.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
