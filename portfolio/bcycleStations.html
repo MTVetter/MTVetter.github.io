@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Houston BCycle Stations
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://mtvetter.github.io/BcycleStations/">
+                                <img src="../assets/bcycleStations.PNG" alt="bcycle stations">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ESRI ArcGIS for JavaScript API version 4.12, jQuery, jQuery UI</p>
+                            <p><strong>About:</strong> Recently, there has been a need within H-GAC to locate the BCycle stations in Houston. BCycle provides two feeds that contains information
+                            about each station. One feed contains some information that includes name of the station, address, latitude/longitude. The other feed contains information about
+                            how many bicycles are available and how many docks are available to return bicycles. The two feeds are json files which is a file type that can't easily be mapped.
+                            </p>
+                            <p><strong>Process:</strong> The first thing I needed to decide was how to display the json feeds. I decided to use ESRI's ArcGIS for JavaScript API. The API allows
+                            me to create a graphic of each station using the station's latitude/longitude. The graphic is useful, but it didn't have information that a user would really want
+                            besides the location. In order to make the graphic more useful to the user, I decided to join the second json feed so that the station will have the information
+                            about how many bikes and docks are available. I added search capabilities to the application. After the user searches an address, the application will zoom and highlight
+                            the closest BCycle station to the searched location. The search widget is also limited to the Houston area since the application only contains the BCycle stations
+                            in the Houston area. Users can also turn on a layer to show which roads have an existing bike lane, shared use path/trail, signed shared roadway, or signed shoulder bike route.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
