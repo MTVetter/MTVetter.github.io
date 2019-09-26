@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+        <link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Houston Restaurants
+                            </h1>
+                        </header>
+                        <div class="post-content" itemprop="articleBody">
+                            <a href="https://mtvetter.github.io/Restaurants/">
+                                <img src="../assets/restaurants.PNG" alt="restaurants">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ESRI ArcGIS for JavaScript API</p>
+                            <p><strong>About:</strong> My wife and I recently moved to Houston and we would hear all these restaurants that we needed to try, but could never
+                            remember the restaurants when it was time to pick somewhere to eat. I created this application to solve this problem. While I was creating the
+                            application, I saw that a food critic created a top 100 list in the Houston area. I decided to add the restaurants from his list along with the
+                            restaurants that my wife and I decided we would try. I created a filter for the top 100 restaurants. This filter is based on the prices. I also
+                            created two different feature actions that are available on the popup window. The first feature action will give the user directions from their
+                            current location to the restuarant. The second feature action has a link to the restuarant menu.
+                            </p>
+                            <p><strong>Process:</strong> I created a feature layer of both the top 100 restaurants and the restaurants my wife and I want to visit. I created
+                            a custom popup template using ESRI's Arcade language. Next, I created the filter functionality using the attributes of the top 100 restaurants.
+                            Creating the direction feature action was a little bit difficult since I never worked with the route task. I also created a unique renderer for
+                            the restaurants based on whether it was a top 100 restaurant or if I've visited it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
