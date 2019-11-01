@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+	<link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                MLB Attendance
+                            </h1>
+                        </header>
+                        <div class="post-content">
+                            <a href="../assets/Attendance.png" target="_blank">
+                                <img src="../assets/Attendance.png" alt="MLB Attendance" height="600" width="850">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ArcGIS Pro, Overpass Turbo, OpenStreetMap</p>
+                            <p><strong>About:</strong> This map shows the top and bottom 5 teams in Major League Baseball in attendance for the 2019 season. The map is
+                            based on <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/the-12-busiest-airports-in-the-world/" target="_blank">this</a>
+                            blog/tutorial from John Nelson showing how to use small multiples in a map document.
+                            </p>
+                            <p><strong>Process:</strong> Initially I was going to create a map that showed all 30 ballparks, but I decided to only show the top and bottom teams
+                            thinking that people would only want to see the leaders and the bottom teams. I used <a href="https://overpass-turbo.eu" target="blank">Overpass Turbo</a>
+                            to download KML files of the stadiums from OpenStreetMap. After downloading the stadiums for the teams, I used ArcGIS Pro to convert the KML files to
+                            feature classes. Once all the KML files were converted, I symbolized the feature classes the way I wanted and started to build my map.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
