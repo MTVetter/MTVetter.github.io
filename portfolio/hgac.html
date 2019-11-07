@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+	<link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                H-GAC Counties
+                            </h1>
+                        </header>
+                        <div class="post-content">
+                            <a href="../assets/H-GAC13Counties.png" target="_blank">
+                                <img src="../assets/H-GAC13Counties.png" alt="H-GAC Counties" height="850" width="600">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ArcGIS Pro</p>
+                            <p><strong>About:</strong> In the conference/meeting rooms, there are many maps that show various items within the H-GAC counties. When view these
+                            maps, I always cringe a little because the maps are very gaudy and could be created better. I decided to see if I could create a better H-GAC map.
+                            </p>
+                            <p><strong>Process:</strong> Since I was going to just show the counties within the H-GAC area, it wasn't difficult to find the data. Once I added
+                            in the counties for Texas, I copied the layer and querried to display only the counties that are within the H-GAC area. I wanted to play around
+                            with popping out the 13 counties. I decided on using a drop shadow which I think makes the 13 counties really standout from the other counties.
+                            Next, I decided to label the 13 counties in a very faint gray so that the labels wouldn't overpower the map. I chose to use imagery to give
+                            the map a realistic feeling. I created an inset map in the top left-hand corner to help give the viewer an idea of where these counties are located.
+                            I made the inset map rounded so that it doesn't distract the viewer. I added a "glassy" box around the counties. This "glassy" box is the color
+                            palette as the county lines which keeps a nice color theme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>

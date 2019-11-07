@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+	<link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                2015 US Drought
+                            </h1>
+                        </header>
+                        <div class="post-content">
+                            <a href="../assets/Drought2015.png" target="_blank">
+                                <img src="../assets/Drought2015.png" alt="2015 U.S. Drought" height="600" width="850">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ArcGIS Pro</p>
+                            <p><strong>About:</strong> This map shows areas of drought in the United States during 2015. The map is
+                            based on <a href="https://www.esri.com/arcgis-blog/products/arcgis-pro/mapping/how-to-make-this-map/" target="_blank">this</a>
+                            blog/tutorial from John Nelson.
+                            </p>
+                            <p><strong>Process:</strong> There are videos within the blog that shows how the map is created. I decided to use 2015 instead of 2018 so that I
+                            would be creating something slightly different then what John created. I downloaded the data from the National Drought Mitigation Center which
+                            resulted in 52 different shapefiles. I merged all the shapefiles together to create a single shapefile. Next, I created a transverse hexagonal grid
+                            where each hexagon has an area of 1000 square kilometers. I spatially joined the hexagons and the drought shapefile. I added together a field from
+                            the drought shapefile called Power so that each individual hexagon will have the sum of Power. I created a bivariate map displaying the frequency
+                            of drought and the severeness of the drought. The Power field that was added together was used to display the drought severeness. I added a hillshade
+                            layer to display the mountains. I also manually created a legend for this map using the hexagons.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="keywords" content="maps, cartography"/>
+		<title>Michael Vetter</title>
+		
+		<!--put your Bootstrap stylesheet links below this comment and above style.css-->
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Anonymous Pro" rel="stylesheet">
+	<link rel="icon" href="../assets/check.ico">
+	</head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top main-navbar site-header">
+                <!--Creates the navbar -->
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-menu-button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <!--Used for screen readers for accessibility -->
+                            <span class="navbar-menu">Menu</span>
+                        </button>
+                        <a class="site-title navbar-brand" href="../index.html">Michael Vetter</a>
+                    </div>
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../resume.html">Resume</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="page-content">
+            <div class="container portfolio-page">
+                <div class="row">
+                    <div class="col-md-12">
+                        <header class="post-header portfolio-header">
+                            <h1 class="post-title" itemprop="name headline">
+                                Tornado Warnings
+                            </h1>
+                        </header>
+                        <div class="post-content">
+                            <a href="../assets/tornadoWarnings2.png" target="_blank">
+                                <img src="../assets/tornadoWarnings2.png" alt="Tornado Warnings" height="600" width="850">
+                            </a>
+                        </div>
+                        <div class="portfolio-image">
+                            <p><br><strong>Technology Used:</strong> ArcGIS Pro</p>
+                            <p><strong>About:</strong> This map is very similar to the <a href="../portfolio/drought.html" target="_blank">US Drought</a> map. I wanted to see 
+                            if I could create a map similar to the drought map by myself from scratch.
+                            </p>
+                            <p><strong>Process:</strong> I downloaded the data from <a href="http://mesonet.agron.iastate.edu/request/gis/watchwarn.phtml" target="_blank">Iowa Environmental Mesonet</a>.
+                            Once I downloaded all the years, I added new fields to the data so that I could calculate the length of the warning. It was a straight forward
+                            process to get the times for the warnings. The time was shown in military time so I took the left 2 numbers and multiplied the number by 60. This
+                            would translate the hour into minutes. Then, I added the right 2 numbers to get a time in minutes. I did the same process for when the warning
+                            ended. I subtracted the ended time by the beginning time to get the length of the warning. Once I did this for every year, I merged all the
+                            shapefiles together. I spatially joined the tornado warning layer to a hexagon layer that I created. I created a bivariate map using the hexagons.
+                            The map shows the frequency of tornado warnings and the duration of the warnings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
+    </body>
+</html>
